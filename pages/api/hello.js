@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-const WIKIPEDIA_ARTICLE_URL = 'https://en.wikipedia.org/wiki/Your_Article_Title';
+
 
 
 export default (req, res) => {
@@ -8,7 +8,7 @@ export default (req, res) => {
   // debugger;
 console.log(req);
 // res.status(200).json({ name: 'Hello, world!' });
-
+const WIKIPEDIA_ARTICLE_URL = 'https://en.wikipedia.org/wiki/Your_Article_Title';
 try {
     // Fetch the Wikipedia article HTML using Axios
     const response = await axios.get(WIKIPEDIA_ARTICLE_URL);
