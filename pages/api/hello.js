@@ -1,7 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import axios from 'axios';
-import cheerio from 'cheerio';
+const cheerio = require("cheerio");
+
 // import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async (res) => {
@@ -12,7 +13,7 @@ export default async (res) => {
     const articleTitle = $('h1#firstHeading').text();
     const articleContent = $('div#content').html();
     res.status(200).json({ title: articleTitle, content: articleContent });
-  } catch (error) {
+} catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal server error' });
   }
